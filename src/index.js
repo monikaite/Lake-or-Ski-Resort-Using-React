@@ -21,12 +21,19 @@ function Resort({name}){
 function App(props){
     return(
       <div>
-          {(props.season === "summer") ? <Lake name="Timahoe Lake"/> : <Resort name="Ski Resort"/>},
+          {props.season === "summer" ? (
+              <Lake name="Timahoe Lake"/>
+              ) : props.season === "winter" ? (
+              <Resort name="Ski Resort"/>
+              ) : (
+              <h1>Come back during Summer, or Winter.</h1>
+              )
+          },
       </div>
     );
 }
 
 ReactDOM.render(
-    <App season="summer" />,
+    <App season="autumn" />,
     document.getElementById("root")
 )
